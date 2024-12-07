@@ -18,7 +18,7 @@ const Chat = () => {
 
   // Set up WebSocket connection
   useEffect(() => {
-    const ws = new WebSocket(`ws://localhost:8000/ws/chat/${room_name}/`);
+    const ws = new WebSocket(`wss://chat-app-api-qupx.onrender.com/ws/chat/${room_name}/`);
     setSocket(ws);
 
     ws.onopen = () => {
