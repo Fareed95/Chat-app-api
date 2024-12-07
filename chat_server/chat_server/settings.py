@@ -34,11 +34,15 @@ ALLOWED_HOSTS = [
 ]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    'http://localhost:3000',
+    'http://localhost:3001',
     # 'https://code-cell-website-1-r8b5.onrender.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
+    'http://localhost:3000',
+    'http://localhost:3001',
     # 'https://code-cell-website-1-r8b5.onrender.com',
 ]
 

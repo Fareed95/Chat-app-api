@@ -2,16 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 
 const ChatRoom = () => {
-    const { roomName } = useParams(); // Extract room name from URL
+    const { roomName } = useParams(); // url se chat room ka name lena ........ it can be infinite rooms .. 
     const [messages, setMessages] = useState([]);
     const [username, setUsername] = useState('');
     const [message, setMessage] = useState('');
     const webSocketRef = useRef(null);
 
     useEffect(() => {
-        const user = prompt("Enter your username:");
+        const user = prompt("Enter your username:"); //prompt
         setUsername(user || 'Anonymous');
-        
+
         const ws = new WebSocket(`wss://chat-app-api-qupx.onrender.com/ws/chat/${roomName}/`);
         webSocketRef.current = ws;
 
@@ -24,10 +24,10 @@ const ChatRoom = () => {
             console.log("Message received:", data);
 
             if (data.type === 'chat_history') {
-                // If receiving chat history
+                //  receiving chat history
                 setMessages(data.messages);
             } else {
-                // If receiving a single chat message
+                // receiving a single chat message
                 setMessages((prev) => [...prev, data]);
             }
         };
