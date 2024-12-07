@@ -29,7 +29,9 @@ SECRET_KEY = 'django-insecure--hu7rtw#nbx60=-t2rui7btr8x37$4e@@q8)ce30cw&qv262zs
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'chat-app-api-qupx.onrender.com'
+]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     # 'https://code-cell-website-1-r8b5.onrender.com',
