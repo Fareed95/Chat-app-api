@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  web:
+    build:
+      context: ./chat_server
+      dockerfile: Dockerfile
+    command: daphne -b 0.0.0.0 -p 8000 chat_server.chat_server.asgi:application
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    # environment:
+    #   REDIS_URL: redis://redis:6379/0
+
+  # redis:
+  #   image: redis:alpine
+  #   container_name: redis
+  #   ports:
+  #     - "6379:6379"
